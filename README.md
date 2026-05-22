@@ -375,7 +375,7 @@ awe used the full dataset but it wasn’t 7mil it was almost 800k
 Task 11 full terminal:
 PS C:\Users\Admin\Desktop\Alfaisal University\4th Year\SE 446 milestone 2\se446-m2-group-Altamimi-AlDeri> scp m2_spark_ml.py aoaltamimi@134.209.172.50:~/
 aoaltamimi@134.209.172.50's password: 
-m2_spark_ml.py                                                                                                                                                                                                          100% 5907    35.0KB/s   00:00    
+m2_spark_ml.py                                                                                                                                                                                                          100% 5880    33.8KB/s   00:00    
 PS C:\Users\Admin\Desktop\Alfaisal University\4th Year\SE 446 milestone 2\se446-m2-group-Altamimi-AlDeri> ssh aoaltamimi@134.209.172.50                  
 aoaltamimi@134.209.172.50's password: 
 Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 5.15.0-176-generic x86_64)
@@ -384,11 +384,12 @@ Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 5.15.0-176-generic x86_64)
  * Management:     https://landscape.canonical.com
  * Support:        https://ubuntu.com/pro
 
- System information as of Fri May 22 17:06:30 UTC 2026
+ System information as of Fri May 22 18:08:49 UTC 2026
 
 Expanded Security Maintenance for Applications is not enabled.
 
-33 updates can be applied immediately.
+36 updates can be applied immediately.
+4 of these updates are standard security updates.
 To see these additional updates run: apt list --upgradable
 
 Enable ESM Apps to receive additional future security updates.
@@ -399,197 +400,194 @@ Run 'do-release-upgrade' to upgrade to it.
 
 
 *** System restart required ***
-Last login: Fri May 22 16:52:59 2026 from 5.163.250.180
-aoaltamimi@master-node:~$ spark-submit \
-    --master yarn \
-    --deploy-mode cluster \
-    --driver-memory 512m \
-    --num-executors 1 \
-    --executor-memory 1g \
-    --executor-cores 1 \
-    --conf spark.driver.maxResultSize=128m \
-    --conf spark.yarn.appMasterEnv.PYSPARK_PYTHON=python3.12 \
-    --conf spark.executorEnv.PYSPARK_PYTHON=python3.12 \
-    m2_spark_ml.py
-26/05/22 17:06:50 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-26/05/22 17:06:51 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at master-node/134.209.172.50:8032
-26/05/22 17:06:52 INFO Configuration: resource-types.xml not found
-26/05/22 17:06:52 INFO ResourceUtils: Unable to find 'resource-types.xml'.
-26/05/22 17:06:52 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (1536 MB per container)
-26/05/22 17:06:52 INFO Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
-26/05/22 17:06:52 INFO Client: Setting up container launch context for our AM
-26/05/22 17:06:52 INFO Client: Setting up the launch environment for our AM container
-26/05/22 17:06:52 INFO Client: Preparing resources for our AM container
-26/05/22 17:06:52 INFO Client: Uploading resource file:/opt/spark-3.5.4-bin-hadoop3/jars/kafka/commons-pool2-2.12.0.jar -> hdfs://master-node:9000/user/aoaltamimi/.sparkStaging/application_1778738889964_0106/commons-pool2-2.12.0.jar
-26/05/22 17:06:53 INFO Client: Uploading resource file:/opt/spark-3.5.4-bin-hadoop3/jars/kafka/kafka-clients-3.9.0.jar -> hdfs://master-node:9000/user/aoaltamimi/.sparkStaging/application_1778738889964_0106/kafka-clients-3.9.0.jar
-26/05/22 17:06:54 INFO Client: Uploading resource file:/opt/spark-3.5.4-bin-hadoop3/jars/kafka/spark-sql-kafka-0-10_2.12-3.5.4.jar -> hdfs://master-node:9000/user/aoaltamimi/.sparkStaging/application_1778738889964_0106/spark-sql-kafka-0-10_2.12-3.5.4.jar
-26/05/22 17:06:55 INFO Client: Uploading resource file:/opt/spark-3.5.4-bin-hadoop3/jars/kafka/spark-token-provider-kafka-0-10_2.12-3.5.4.jar -> hdfs://master-node:9000/user/aoaltamimi/.sparkStaging/application_1778738889964_0106/spark-token-provider-kafka-0-10_2.12-3.5.4.jar
-26/05/22 17:06:55 INFO Client: Uploading resource file:/home/aoaltamimi/m2_spark_ml.py -> hdfs://master-node:9000/user/aoaltamimi/.sparkStaging/application_1778738889964_0106/m2_spark_ml.py
-26/05/22 17:06:56 INFO Client: Uploading resource file:/opt/spark-3.5.4-bin-hadoop3/python/lib/pyspark.zip -> hdfs://master-node:9000/user/aoaltamimi/.sparkStaging/application_1778738889964_0106/pyspark.zip
-26/05/22 17:06:57 INFO Client: Uploading resource file:/opt/spark-3.5.4-bin-hadoop3/python/lib/py4j-0.10.9.7-src.zip -> hdfs://master-node:9000/user/aoaltamimi/.sparkStaging/application_1778738889964_0106/py4j-0.10.9.7-src.zip
-26/05/22 17:06:57 INFO Client: Uploading resource file:/tmp/spark-5ffaeeb7-6691-4340-8033-24bd82fc04ba/__spark_conf__16959091680685891517.zip -> hdfs://master-node:9000/user/aoaltamimi/.sparkStaging/application_1778738889964_0106/__spark_conf__.zip
-26/05/22 17:06:58 INFO SecurityManager: Changing view acls to: aoaltamimi
-26/05/22 17:06:58 INFO SecurityManager: Changing modify acls to: aoaltamimi
-26/05/22 17:06:58 INFO SecurityManager: Changing view acls groups to: 
-26/05/22 17:06:58 INFO SecurityManager: Changing modify acls groups to: 
-26/05/22 17:06:58 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aoaltamimi; groups with view permissions: EMPTY; users with modify permissions: aoaltamimi; groups with modify permissions: EMPTY
-26/05/22 17:06:58 INFO Client: Submitting application application_1778738889964_0106 to ResourceManager
-26/05/22 17:06:58 INFO YarnClientImpl: Submitted application application_1778738889964_0106
-26/05/22 17:06:59 INFO Client: Application report for application_1778738889964_0106 (state: ACCEPTED)
-26/05/22 17:06:59 INFO Client: 
+Last login: Fri May 22 17:54:54 2026 from 5.163.250.180
+aoaltamimi@master-node:~$ spark-submit     --master yarn     --deploy-mode cluster     --driver-memory 512m     --num-executors 1     --executor-memory 1g     --executor-cores 1     --conf spark.driver.maxResultSize=128m     --conf spark.yarn.appMasterEnv.PYSPARK_PYTHON=python3.12     --conf spark.executorEnv.PYSPARK_PYTHON=python3.12     m2_spark_ml.py
+26/05/22 18:09:08 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/05/22 18:09:08 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at master-node/134.209.172.50:8032
+26/05/22 18:09:10 INFO Configuration: resource-types.xml not found
+26/05/22 18:09:10 INFO ResourceUtils: Unable to find 'resource-types.xml'.
+26/05/22 18:09:10 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (1536 MB per container)
+26/05/22 18:09:10 INFO Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+26/05/22 18:09:10 INFO Client: Setting up container launch context for our AM
+26/05/22 18:09:10 INFO Client: Setting up the launch environment for our AM container
+26/05/22 18:09:10 INFO Client: Preparing resources for our AM container
+26/05/22 18:09:10 INFO Client: Uploading resource file:/opt/spark-3.5.4-bin-hadoop3/jars/kafka/commons-pool2-2.12.0.jar -> hdfs://master-node:9000/user/aoaltamimi/.sparkStaging/application_1778738889964_0109/commons-pool2-2.12.0.jar
+26/05/22 18:09:11 INFO Client: Uploading resource file:/opt/spark-3.5.4-bin-hadoop3/jars/kafka/kafka-clients-3.9.0.jar -> hdfs://master-node:9000/user/aoaltamimi/.sparkStaging/application_1778738889964_0109/kafka-clients-3.9.0.jar
+26/05/22 18:09:12 INFO Client: Uploading resource file:/opt/spark-3.5.4-bin-hadoop3/jars/kafka/spark-sql-kafka-0-10_2.12-3.5.4.jar -> hdfs://master-node:9000/user/aoaltamimi/.sparkStaging/application_1778738889964_0109/spark-sql-kafka-0-10_2.12-3.5.4.jar
+26/05/22 18:09:12 INFO Client: Uploading resource file:/opt/spark-3.5.4-bin-hadoop3/jars/kafka/spark-token-provider-kafka-0-10_2.12-3.5.4.jar -> hdfs://master-node:9000/user/aoaltamimi/.sparkStaging/application_1778738889964_0109/spark-token-provider-kafka-0-10_2.12-3.5.4.jar
+26/05/22 18:09:13 INFO Client: Uploading resource file:/home/aoaltamimi/m2_spark_ml.py -> hdfs://master-node:9000/user/aoaltamimi/.sparkStaging/application_1778738889964_0109/m2_spark_ml.py
+26/05/22 18:09:13 INFO Client: Uploading resource file:/opt/spark-3.5.4-bin-hadoop3/python/lib/pyspark.zip -> hdfs://master-node:9000/user/aoaltamimi/.sparkStaging/application_1778738889964_0109/pyspark.zip
+26/05/22 18:09:14 INFO Client: Uploading resource file:/opt/spark-3.5.4-bin-hadoop3/python/lib/py4j-0.10.9.7-src.zip -> hdfs://master-node:9000/user/aoaltamimi/.sparkStaging/application_1778738889964_0109/py4j-0.10.9.7-src.zip
+26/05/22 18:09:15 INFO Client: Uploading resource file:/tmp/spark-5ddb0055-f2a3-41e4-bac7-165ba650f6b1/__spark_conf__6488889442909890380.zip -> hdfs://master-node:9000/user/aoaltamimi/.sparkStaging/application_1778738889964_0109/__spark_conf__.zip
+26/05/22 18:09:15 INFO SecurityManager: Changing view acls to: aoaltamimi
+26/05/22 18:09:15 INFO SecurityManager: Changing modify acls to: aoaltamimi
+26/05/22 18:09:15 INFO SecurityManager: Changing view acls groups to: 
+26/05/22 18:09:15 INFO SecurityManager: Changing modify acls groups to: 
+26/05/22 18:09:15 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aoaltamimi; groups with view permissions: EMPTY; users with modify permissions: aoaltamimi; groups with modify permissions: EMPTY
+26/05/22 18:09:15 INFO Client: Submitting application application_1778738889964_0109 to ResourceManager
+26/05/22 18:09:15 INFO YarnClientImpl: Submitted application application_1778738889964_0109
+26/05/22 18:09:16 INFO Client: Application report for application_1778738889964_0109 (state: ACCEPTED)
+26/05/22 18:09:16 INFO Client: 
          client token: N/A
          diagnostics: AM container is launched, waiting for AM container to Register with RM
          ApplicationMaster host: N/A
          ApplicationMaster RPC port: -1
          queue: root.default
-         start time: 1779469618803
+         start time: 1779473355921
          final status: UNDEFINED
-         tracking URL: http://master-node:8088/proxy/application_1778738889964_0106/
+         tracking URL: http://master-node:8088/proxy/application_1778738889964_0109/
          user: aoaltamimi
-26/05/22 17:07:24 INFO Client: Application report for application_1778738889964_0106 (state: RUNNING)
-26/05/22 17:07:24 INFO Client: 
+26/05/22 18:09:38 INFO Client: Application report for application_1778738889964_0109 (state: RUNNING)
+26/05/22 18:09:38 INFO Client: 
          client token: N/A
          diagnostics: N/A
          ApplicationMaster host: worker-node-2
-         ApplicationMaster RPC port: 41271
+         ApplicationMaster RPC port: 39879
          queue: root.default
-         start time: 1779469618803
+         start time: 1779473355921
          final status: UNDEFINED
-         tracking URL: http://master-node:8088/proxy/application_1778738889964_0106/
+         tracking URL: http://master-node:8088/proxy/application_1778738889964_0109/
          user: aoaltamimi
-26/05/22 17:07:55 INFO Client: Application report for application_1778738889964_0106 (state: RUNNING)
-26/05/22 17:08:25 INFO Client: Application report for application_1778738889964_0106 (state: RUNNING)
-26/05/22 17:08:55 INFO Client: Application report for application_1778738889964_0106 (state: RUNNING)
-26/05/22 17:09:25 INFO Client: Application report for application_1778738889964_0106 (state: RUNNING)
-26/05/22 17:09:55 INFO Client: Application report for application_1778738889964_0106 (state: RUNNING)
-26/05/22 17:10:25 INFO Client: Application report for application_1778738889964_0106 (state: RUNNING)
-26/05/22 17:10:55 INFO Client: Application report for application_1778738889964_0106 (state: RUNNING)
-26/05/22 17:11:25 INFO Client: Application report for application_1778738889964_0106 (state: RUNNING)
-26/05/22 17:11:55 INFO Client: Application report for application_1778738889964_0106 (state: RUNNING)
-26/05/22 17:12:25 INFO Client: Application report for application_1778738889964_0106 (state: RUNNING)
-26/05/22 17:12:56 INFO Client: Application report for application_1778738889964_0106 (state: RUNNING)
-26/05/22 17:13:26 INFO Client: Application report for application_1778738889964_0106 (state: RUNNING)
-26/05/22 17:13:30 INFO Client: Application report for application_1778738889964_0106 (state: FINISHED)
-26/05/22 17:13:30 INFO Client: 
+26/05/22 18:10:08 INFO Client: Application report for application_1778738889964_0109 (state: RUNNING)
+26/05/22 18:10:38 INFO Client: Application report for application_1778738889964_0109 (state: RUNNING)
+26/05/22 18:11:08 INFO Client: Application report for application_1778738889964_0109 (state: RUNNING)
+26/05/22 18:11:38 INFO Client: Application report for application_1778738889964_0109 (state: RUNNING)
+26/05/22 18:12:08 INFO Client: Application report for application_1778738889964_0109 (state: RUNNING)
+26/05/22 18:12:38 INFO Client: Application report for application_1778738889964_0109 (state: RUNNING)
+26/05/22 18:13:08 INFO Client: Application report for application_1778738889964_0109 (state: RUNNING)
+26/05/22 18:13:38 INFO Client: Application report for application_1778738889964_0109 (state: RUNNING)
+26/05/22 18:14:09 INFO Client: Application report for application_1778738889964_0109 (state: RUNNING)
+26/05/22 18:14:39 INFO Client: Application report for application_1778738889964_0109 (state: RUNNING)
+26/05/22 18:15:09 INFO Client: Application report for application_1778738889964_0109 (state: RUNNING)
+26/05/22 18:15:37 INFO Client: Application report for application_1778738889964_0109 (state: FINISHED)
+26/05/22 18:15:37 INFO Client: 
          client token: N/A
          diagnostics: N/A
          ApplicationMaster host: worker-node-2
-         ApplicationMaster RPC port: 41271
+         ApplicationMaster RPC port: 39879
          queue: root.default
-         start time: 1779469618803
+         start time: 1779473355921
          final status: SUCCEEDED
-         tracking URL: http://master-node:8088/proxy/application_1778738889964_0106/
+         tracking URL: http://master-node:8088/proxy/application_1778738889964_0109/
          user: aoaltamimi
-26/05/22 17:13:30 INFO ShutdownHookManager: Shutdown hook called
-26/05/22 17:13:30 INFO ShutdownHookManager: Deleting directory /tmp/spark-5ffaeeb7-6691-4340-8033-24bd82fc04ba
-26/05/22 17:13:30 INFO ShutdownHookManager: Deleting directory /tmp/spark-4571e684-c45a-4976-a3ae-b75889b6c91a
+26/05/22 18:15:37 INFO ShutdownHookManager: Shutdown hook called
+26/05/22 18:15:37 INFO ShutdownHookManager: Deleting directory /tmp/spark-b392868a-c86a-44a4-b35d-d8be2c5af3a7
+26/05/22 18:15:37 INFO ShutdownHookManager: Deleting directory /tmp/spark-5ddb0055-f2a3-41e4-bac7-165ba650f6b1
 aoaltamimi@master-node:~$ mkdir -p ~/output/spark_submit
-aoaltamimi@master-node:~$ yarn logs -applicationId application_1778738889964_0106 > ~/output/spark_submit/run.log
+aoaltamimi@master-node:~$ yarn logs -applicationId application_1778738889964_0109 > ~/output/spark_submit/run.log
 WARNING: YARN_CONF_DIR has been replaced by HADOOP_CONF_DIR. Using value of YARN_CONF_DIR.
-2026-05-22 17:14:54,470 INFO client.DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at master-node/134.209.172.50:8032
+2026-05-22 18:16:21,367 INFO client.DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at master-node/134.209.172.50:8032
 aoaltamimi@master-node:~$ wc -l ~/output/spark_submit/run.log
-11594 /home/aoaltamimi/output/spark_submit/run.log
+11638 /home/aoaltamimi/output/spark_submit/run.log
 aoaltamimi@master-node:~$ head -100 ~/output/spark_submit/run.log
-Container: container_1778738889964_0106_01_000003 on worker-node-1_38887
+Container: container_1778738889964_0109_01_000003 on worker-node-1_38887
 LogAggregationType: AGGREGATED
 ========================================================================
 LogType:directory.info
-LogLastModifiedTime:Fri May 22 17:13:30 +0000 2026
+LogLastModifiedTime:Fri May 22 18:15:38 +0000 2026
 LogLength:7927
 LogContents:
 ls -l:
 total 52
-lrwxrwxrwx 1 hadoop hadoop   90 May 22 17:07 commons-pool2-2.12.0.jar -> /tmp/hadoop-hadoop/nm-local-dir/usercache/aoaltamimi/filecache/49/commons-pool2-2.12.0.jar
--rw-r--r-- 1 hadoop hadoop   88 May 22 17:07 container_tokens
--rwx------ 1 hadoop hadoop  682 May 22 17:07 default_container_executor_session.sh
--rwx------ 1 hadoop hadoop  737 May 22 17:07 default_container_executor.sh
-lrwxrwxrwx 1 hadoop hadoop   89 May 22 17:07 kafka-clients-3.9.0.jar -> /tmp/hadoop-hadoop/nm-local-dir/usercache/aoaltamimi/filecache/47/kafka-clients-3.9.0.jar
--rwx------ 1 hadoop hadoop 7003 May 22 17:07 launch_container.sh
-lrwxrwxrwx 1 hadoop hadoop   87 May 22 17:07 py4j-0.10.9.7-src.zip -> /tmp/hadoop-hadoop/nm-local-dir/usercache/aoaltamimi/filecache/53/py4j-0.10.9.7-src.zip
-lrwxrwxrwx 1 hadoop hadoop   77 May 22 17:07 pyspark.zip -> /tmp/hadoop-hadoop/nm-local-dir/usercache/aoaltamimi/filecache/48/pyspark.zip
-lrwxrwxrwx 1 hadoop hadoop   84 May 22 17:07 __spark_conf__ -> /tmp/hadoop-hadoop/nm-local-dir/usercache/aoaltamimi/filecache/50/__spark_conf__.zip
-lrwxrwxrwx 1 hadoop hadoop  101 May 22 17:07 spark-sql-kafka-0-10_2.12-3.5.4.jar -> /tmp/hadoop-hadoop/nm-local-dir/usercache/aoaltamimi/filecache/51/spark-sql-kafka-0-10_2.12-3.5.4.jar
-lrwxrwxrwx 1 hadoop hadoop  112 May 22 17:07 spark-token-provider-kafka-0-10_2.12-3.5.4.jar -> /tmp/hadoop-hadoop/nm-local-dir/usercache/aoaltamimi/filecache/52/spark-token-provider-kafka-0-10_2.12-3.5.4.jar
-drwx--x--- 2 hadoop hadoop 4096 May 22 17:07 tmp
+lrwxrwxrwx 1 hadoop hadoop   90 May 22 18:09 commons-pool2-2.12.0.jar -> /tmp/hadoop-hadoop/nm-local-dir/usercache/aoaltamimi/filecache/72/commons-pool2-2.12.0.jar
+-rw-r--r-- 1 hadoop hadoop   88 May 22 18:09 container_tokens
+-rwx------ 1 hadoop hadoop  682 May 22 18:09 default_container_executor_session.sh
+-rwx------ 1 hadoop hadoop  737 May 22 18:09 default_container_executor.sh
+lrwxrwxrwx 1 hadoop hadoop   89 May 22 18:09 kafka-clients-3.9.0.jar -> /tmp/hadoop-hadoop/nm-local-dir/usercache/aoaltamimi/filecache/70/kafka-clients-3.9.0.jar
+-rwx------ 1 hadoop hadoop 7003 May 22 18:09 launch_container.sh
+lrwxrwxrwx 1 hadoop hadoop   87 May 22 18:09 py4j-0.10.9.7-src.zip -> /tmp/hadoop-hadoop/nm-local-dir/usercache/aoaltamimi/filecache/76/py4j-0.10.9.7-src.zip
+lrwxrwxrwx 1 hadoop hadoop   77 May 22 18:09 pyspark.zip -> /tmp/hadoop-hadoop/nm-local-dir/usercache/aoaltamimi/filecache/71/pyspark.zip
+lrwxrwxrwx 1 hadoop hadoop   84 May 22 18:09 __spark_conf__ -> /tmp/hadoop-hadoop/nm-local-dir/usercache/aoaltamimi/filecache/73/__spark_conf__.zip
+lrwxrwxrwx 1 hadoop hadoop  101 May 22 18:09 spark-sql-kafka-0-10_2.12-3.5.4.jar -> /tmp/hadoop-hadoop/nm-local-dir/usercache/aoaltamimi/filecache/74/spark-sql-kafka-0-10_2.12-3.5.4.jar
+lrwxrwxrwx 1 hadoop hadoop  112 May 22 18:09 spark-token-provider-kafka-0-10_2.12-3.5.4.jar -> /tmp/hadoop-hadoop/nm-local-dir/usercache/aoaltamimi/filecache/75/spark-token-provider-kafka-0-10_2.12-3.5.4.jar
+drwx--x--- 2 hadoop hadoop 4096 May 22 18:09 tmp
 find -L . -maxdepth 5 -ls:
-   800511      4 drwx--x---   3 hadoop   hadoop       4096 May 22 17:07 .
-   800520      4 -rw-r--r--   1 hadoop   hadoop         16 May 22 17:07 ./.default_container_executor.sh.crc
-   800518      4 -rw-r--r--   1 hadoop   hadoop         16 May 22 17:07 ./.default_container_executor_session.sh.crc
-   800457      4 drwx------   3 hadoop   hadoop       4096 May 22 17:07 ./__spark_conf__
-   800495      4 -r-x------   1 hadoop   hadoop       1382 May 22 17:06 ./__spark_conf__/__spark_dist_cache__.properties
-   800458      4 drwx------   2 hadoop   hadoop       4096 May 22 17:07 ./__spark_conf__/__hadoop_conf__
-   800485     16 -r-x------   1 hadoop   hadoop      14007 May 22 17:06 ./__spark_conf__/__hadoop_conf__/hadoop-policy.xml
-   800488      4 -r-x------   1 hadoop   hadoop        620 May 22 17:06 ./__spark_conf__/__hadoop_conf__/httpfs-site.xml
-   800466      4 -r-x------   1 hadoop   hadoop       3999 May 22 17:06 ./__spark_conf__/__hadoop_conf__/hadoop-env.cmd
-   800465      4 -r-x------   1 hadoop   hadoop       1501 May 22 17:06 ./__spark_conf__/__hadoop_conf__/yarn-site.xml
-   800489      4 -r-x------   1 hadoop   hadoop        951 May 22 17:06 ./__spark_conf__/__hadoop_conf__/mapred-env.cmd
-   800482      4 -r-x------   1 hadoop   hadoop       3414 May 22 17:06 ./__spark_conf__/__hadoop_conf__/hadoop-user-functions.sh.example
-   800468      4 -r-x------   1 hadoop   hadoop        259 May 22 17:06 ./__spark_conf__/__hadoop_conf__/core-site.xml
-   800491      8 -r-x------   1 hadoop   hadoop       4113 May 22 17:06 ./__spark_conf__/__hadoop_conf__/mapred-queues.xml.template
-   800487      4 -r-x------   1 hadoop   hadoop        775 May 22 17:06 ./__spark_conf__/__hadoop_conf__/hdfs-site.xml.bak
-   800479      4 -r-x------   1 hadoop   hadoop        683 May 22 17:06 ./__spark_conf__/__hadoop_conf__/hdfs-rbf-site.xml
-   800474      8 -r-x------   1 hadoop   hadoop       7095 May 22 17:06 ./__spark_conf__/__hadoop_conf__/yarn-env.sh
-   800484      4 -r-x------   1 hadoop   hadoop       1351 May 22 17:06 ./__spark_conf__/__hadoop_conf__/kms-env.sh
-   800470      4 -r-x------   1 hadoop   hadoop       2250 May 22 17:06 ./__spark_conf__/__hadoop_conf__/yarn-env.cmd
-   800480      4 -r-x------   1 hadoop   hadoop        774 May 22 17:06 ./__spark_conf__/__hadoop_conf__/core-site.xml.bak
-   800478      4 -r-x------   1 hadoop   hadoop       1764 May 22 17:06 ./__spark_conf__/__hadoop_conf__/mapred-env.sh
-   800464      4 -r-x------   1 hadoop   hadoop       3321 May 22 17:06 ./__spark_conf__/__hadoop_conf__/hadoop-metrics2.properties
-   800460     20 -r-x------   1 hadoop   hadoop      16838 May 22 17:06 ./__spark_conf__/__hadoop_conf__/hadoop-env.sh
-   800467      4 -r-x------   1 hadoop   hadoop         28 May 22 17:06 ./__spark_conf__/__hadoop_conf__/workers
-   800462      4 -r-x------   1 hadoop   hadoop       1149 May 22 17:06 ./__spark_conf__/__hadoop_conf__/mapred-site.xml
-   800477      4 -r-x------   1 hadoop   hadoop       2567 May 22 17:06 ./__spark_conf__/__hadoop_conf__/container-executor.cfg
-   800459     16 -r-x------   1 hadoop   hadoop      14451 May 22 17:06 ./__spark_conf__/__hadoop_conf__/log4j.properties
-   800461      4 -r-x------   1 hadoop   hadoop       2591 May 22 17:06 ./__spark_conf__/__hadoop_conf__/yarnservice-log4j.properties
-   800473      4 -r-x------   1 hadoop   hadoop       1335 May 22 17:06 ./__spark_conf__/__hadoop_conf__/configuration.xsl
-   800492      4 -r-x------   1 hadoop   hadoop        682 May 22 17:06 ./__spark_conf__/__hadoop_conf__/kms-site.xml
-   800463      4 -r-x------   1 hadoop   hadoop       1657 May 22 17:06 ./__spark_conf__/__hadoop_conf__/httpfs-log4j.properties
-   800471     12 -r-x------   1 hadoop   hadoop       9213 May 22 17:06 ./__spark_conf__/__hadoop_conf__/capacity-scheduler.xml
-   800469      4 -r-x------   1 hadoop   hadoop       1860 May 22 17:06 ./__spark_conf__/__hadoop_conf__/kms-log4j.properties
-   800476      4 -r-x------   1 hadoop   hadoop        557 May 22 17:06 ./__spark_conf__/__hadoop_conf__/hdfs-site.xml
-   800472      4 -r-x------   1 hadoop   hadoop       3518 May 22 17:06 ./__spark_conf__/__hadoop_conf__/kms-acls.xml
-   800490      4 -r-x------   1 hadoop   hadoop       2697 May 22 17:06 ./__spark_conf__/__hadoop_conf__/ssl-server.xml.example
-   800475      4 -r-x------   1 hadoop   hadoop       1190 May 22 17:06 ./__spark_conf__/__hadoop_conf__/yarn-site.xml.bak.1778738820
-   800486      4 -r-x------   1 hadoop   hadoop       1484 May 22 17:06 ./__spark_conf__/__hadoop_conf__/httpfs-env.sh
-   800483      4 -r-x------   1 hadoop   hadoop       2316 May 22 17:06 ./__spark_conf__/__hadoop_conf__/ssl-client.xml.example
-   800481      4 -r-x------   1 hadoop   hadoop       2681 May 22 17:06 ./__spark_conf__/__hadoop_conf__/user_ec_policies.xml.template
-   800493    244 -r-x------   1 hadoop   hadoop     245914 May 22 17:06 ./__spark_conf__/__spark_hadoop_conf__.xml
-   800494      4 -r-x------   1 hadoop   hadoop       1357 May 22 17:06 ./__spark_conf__/__spark_conf__.properties
-   800513      4 -rw-r--r--   1 hadoop   hadoop         88 May 22 17:07 ./container_tokens
-   800516      4 -rw-r--r--   1 hadoop   hadoop         64 May 22 17:07 ./.launch_container.sh.crc
-   800514      4 -rw-r--r--   1 hadoop   hadoop         12 May 22 17:07 ./.container_tokens.crc
-   800517      4 -rwx------   1 hadoop   hadoop        682 May 22 17:07 ./default_container_executor_session.sh
-   800515      8 -rwx------   1 hadoop   hadoop       7003 May 22 17:07 ./launch_container.sh
-   800500     56 -r-x------   1 hadoop   hadoop      56808 May 22 17:07 ./spark-token-provider-kafka-0-10_2.12-3.5.4.jar
-   800512      4 drwx--x---   2 hadoop   hadoop       4096 May 22 17:07 ./tmp
-   800454    148 -r-x------   1 hadoop   hadoop     150048 May 22 17:07 ./commons-pool2-2.12.0.jar
-   800447   8992 -r-x------   1 hadoop   hadoop    9204801 May 22 17:07 ./kafka-clients-3.9.0.jar
-   800497    424 -r-x------   1 hadoop   hadoop     432339 May 22 17:07 ./spark-sql-kafka-0-10_2.12-3.5.4.jar
-   800503     44 -r-x------   1 hadoop   hadoop      42424 May 22 17:07 ./py4j-0.10.9.7-src.zip
-   800451   2380 -r-x------   1 hadoop   hadoop    2434671 May 22 17:07 ./pyspark.zip
-   800519      4 -rwx------   1 hadoop   hadoop        737 May 22 17:07 ./default_container_executor.sh
+   800691      4 drwx--x---   3 hadoop   hadoop       4096 May 22 18:09 .
+   800700      4 -rw-r--r--   1 hadoop   hadoop         16 May 22 18:09 ./.default_container_executor.sh.crc
+   800698      4 -rw-r--r--   1 hadoop   hadoop         16 May 22 18:09 ./.default_container_executor_session.sh.crc
+   800637      4 drwx------   3 hadoop   hadoop       4096 May 22 18:09 ./__spark_conf__
+   800675      4 -r-x------   1 hadoop   hadoop       1382 May 22 18:09 ./__spark_conf__/__spark_dist_cache__.properties
+   800638      4 drwx------   2 hadoop   hadoop       4096 May 22 18:09 ./__spark_conf__/__hadoop_conf__
+   800665     16 -r-x------   1 hadoop   hadoop      14007 May 22 18:09 ./__spark_conf__/__hadoop_conf__/hadoop-policy.xml
+   800668      4 -r-x------   1 hadoop   hadoop        620 May 22 18:09 ./__spark_conf__/__hadoop_conf__/httpfs-site.xml
+   800646      4 -r-x------   1 hadoop   hadoop       3999 May 22 18:09 ./__spark_conf__/__hadoop_conf__/hadoop-env.cmd
+   800645      4 -r-x------   1 hadoop   hadoop       1501 May 22 18:09 ./__spark_conf__/__hadoop_conf__/yarn-site.xml
+   800669      4 -r-x------   1 hadoop   hadoop        951 May 22 18:09 ./__spark_conf__/__hadoop_conf__/mapred-env.cmd
+   800662      4 -r-x------   1 hadoop   hadoop       3414 May 22 18:09 ./__spark_conf__/__hadoop_conf__/hadoop-user-functions.sh.example
+   800648      4 -r-x------   1 hadoop   hadoop        259 May 22 18:09 ./__spark_conf__/__hadoop_conf__/core-site.xml
+   800671      8 -r-x------   1 hadoop   hadoop       4113 May 22 18:09 ./__spark_conf__/__hadoop_conf__/mapred-queues.xml.template
+   800667      4 -r-x------   1 hadoop   hadoop        775 May 22 18:09 ./__spark_conf__/__hadoop_conf__/hdfs-site.xml.bak
+   800659      4 -r-x------   1 hadoop   hadoop        683 May 22 18:09 ./__spark_conf__/__hadoop_conf__/hdfs-rbf-site.xml
+   800654      8 -r-x------   1 hadoop   hadoop       7095 May 22 18:09 ./__spark_conf__/__hadoop_conf__/yarn-env.sh
+   800664      4 -r-x------   1 hadoop   hadoop       1351 May 22 18:09 ./__spark_conf__/__hadoop_conf__/kms-env.sh
+   800650      4 -r-x------   1 hadoop   hadoop       2250 May 22 18:09 ./__spark_conf__/__hadoop_conf__/yarn-env.cmd
+   800660      4 -r-x------   1 hadoop   hadoop        774 May 22 18:09 ./__spark_conf__/__hadoop_conf__/core-site.xml.bak
+   800658      4 -r-x------   1 hadoop   hadoop       1764 May 22 18:09 ./__spark_conf__/__hadoop_conf__/mapred-env.sh
+   800644      4 -r-x------   1 hadoop   hadoop       3321 May 22 18:09 ./__spark_conf__/__hadoop_conf__/hadoop-metrics2.properties
+   800640     20 -r-x------   1 hadoop   hadoop      16838 May 22 18:09 ./__spark_conf__/__hadoop_conf__/hadoop-env.sh
+   800647      4 -r-x------   1 hadoop   hadoop         28 May 22 18:09 ./__spark_conf__/__hadoop_conf__/workers
+   800642      4 -r-x------   1 hadoop   hadoop       1149 May 22 18:09 ./__spark_conf__/__hadoop_conf__/mapred-site.xml
+   800657      4 -r-x------   1 hadoop   hadoop       2567 May 22 18:09 ./__spark_conf__/__hadoop_conf__/container-executor.cfg
+   800639     16 -r-x------   1 hadoop   hadoop      14451 May 22 18:09 ./__spark_conf__/__hadoop_conf__/log4j.properties
+   800641      4 -r-x------   1 hadoop   hadoop       2591 May 22 18:09 ./__spark_conf__/__hadoop_conf__/yarnservice-log4j.properties
+   800653      4 -r-x------   1 hadoop   hadoop       1335 May 22 18:09 ./__spark_conf__/__hadoop_conf__/configuration.xsl
+   800672      4 -r-x------   1 hadoop   hadoop        682 May 22 18:09 ./__spark_conf__/__hadoop_conf__/kms-site.xml
+   800643      4 -r-x------   1 hadoop   hadoop       1657 May 22 18:09 ./__spark_conf__/__hadoop_conf__/httpfs-log4j.properties
+   800651     12 -r-x------   1 hadoop   hadoop       9213 May 22 18:09 ./__spark_conf__/__hadoop_conf__/capacity-scheduler.xml
+   800649      4 -r-x------   1 hadoop   hadoop       1860 May 22 18:09 ./__spark_conf__/__hadoop_conf__/kms-log4j.properties
+   800656      4 -r-x------   1 hadoop   hadoop        557 May 22 18:09 ./__spark_conf__/__hadoop_conf__/hdfs-site.xml
+   800652      4 -r-x------   1 hadoop   hadoop       3518 May 22 18:09 ./__spark_conf__/__hadoop_conf__/kms-acls.xml
+   800670      4 -r-x------   1 hadoop   hadoop       2697 May 22 18:09 ./__spark_conf__/__hadoop_conf__/ssl-server.xml.example
+   800655      4 -r-x------   1 hadoop   hadoop       1190 May 22 18:09 ./__spark_conf__/__hadoop_conf__/yarn-site.xml.bak.1778738820
+   800666      4 -r-x------   1 hadoop   hadoop       1484 May 22 18:09 ./__spark_conf__/__hadoop_conf__/httpfs-env.sh
+   800663      4 -r-x------   1 hadoop   hadoop       2316 May 22 18:09 ./__spark_conf__/__hadoop_conf__/ssl-client.xml.example
+   800661      4 -r-x------   1 hadoop   hadoop       2681 May 22 18:09 ./__spark_conf__/__hadoop_conf__/user_ec_policies.xml.template
+   800673    244 -r-x------   1 hadoop   hadoop     245914 May 22 18:09 ./__spark_conf__/__spark_hadoop_conf__.xml
+   800674      4 -r-x------   1 hadoop   hadoop       1357 May 22 18:09 ./__spark_conf__/__spark_conf__.properties
+   800693      4 -rw-r--r--   1 hadoop   hadoop         88 May 22 18:09 ./container_tokens
+   800696      4 -rw-r--r--   1 hadoop   hadoop         64 May 22 18:09 ./.launch_container.sh.crc
+   800694      4 -rw-r--r--   1 hadoop   hadoop         12 May 22 18:09 ./.container_tokens.crc
+   800697      4 -rwx------   1 hadoop   hadoop        682 May 22 18:09 ./default_container_executor_session.sh
+   800695      8 -rwx------   1 hadoop   hadoop       7003 May 22 18:09 ./launch_container.sh
+   800680     56 -r-x------   1 hadoop   hadoop      56808 May 22 18:09 ./spark-token-provider-kafka-0-10_2.12-3.5.4.jar
+   800692      4 drwx--x---   2 hadoop   hadoop       4096 May 22 18:09 ./tmp
+   800634    148 -r-x------   1 hadoop   hadoop     150048 May 22 18:09 ./commons-pool2-2.12.0.jar
+   800627   8992 -r-x------   1 hadoop   hadoop    9204801 May 22 18:09 ./kafka-clients-3.9.0.jar
+   800677    424 -r-x------   1 hadoop   hadoop     432339 May 22 18:09 ./spark-sql-kafka-0-10_2.12-3.5.4.jar
+   800683     44 -r-x------   1 hadoop   hadoop      42424 May 22 18:09 ./py4j-0.10.9.7-src.zip
+   800631   2380 -r-x------   1 hadoop   hadoop    2434671 May 22 18:09 ./pyspark.zip
+   800699      4 -rwx------   1 hadoop   hadoop        737 May 22 18:09 ./default_container_executor.sh
 broken symlinks(find -L . -maxdepth 5 -type l -ls):
 
 End of LogType:directory.info
 *******************************************************************************
 
-Container: container_1778738889964_0106_01_000003 on worker-node-1_38887
+Container: container_1778738889964_0109_01_000003 on worker-node-1_38887
 LogAggregationType: AGGREGATED
 ========================================================================
 LogType:launch_container.sh
-LogLastModifiedTime:Fri May 22 17:13:30 +0000 2026
+LogLastModifiedTime:Fri May 22 18:15:38 +0000 2026
 LogLength:7003
 LogContents:
 #!/bin/bash
 
 set -o pipefail -e
-export PRELAUNCH_OUT="/opt/hadoop-3.4.1/logs/userlogs/application_1778738889964_0106/container_1778738889964_0106_01_000003/prelaunch.out"
+export PRELAUNCH_OUT="/opt/hadoop-3.4.1/logs/userlogs/application_1778738889964_0109/container_1778738889964_0109_01_000003/prelaunch.out"
 exec >"${PRELAUNCH_OUT}"
-export PRELAUNCH_ERR="/opt/hadoop-3.4.1/logs/userlogs/application_1778738889964_0106/container_1778738889964_0106_01_000003/prelaunch.err"
+export PRELAUNCH_ERR="/opt/hadoop-3.4.1/logs/userlogs/application_1778738889964_0109/container_1778738889964_0109_01_000003/prelaunch.err"
 exec 2>"${PRELAUNCH_ERR}"
 echo "Setting up env variables"
 export JAVA_HOME=${JAVA_HOME:-"/usr/lib/jvm/java-11-openjdk-amd64"}
 export HADOOP_COMMON_HOME=${HADOOP_COMMON_HOME:-"/opt/hadoop-3.4.1"}
 export HADOOP_HDFS_HOME=${HADOOP_HDFS_HOME:-"/opt/hadoop-3.4.1"}
+aoaltamimi@master-node:~$ exit
+logout
+Connection to 134.209.172.50 closed.
+PS C:\Users\Admin\Desktop\Alfaisal University\4th Year\SE 446 milestone 2\se446-m2-group-Altamimi-AlDeri> scp aoaltamimi@134.209.172.50:~/output/spark_submit/run.log ./run.log
+aoaltamimi@134.209.172.50's password: 
+run.log                                                                                                                                                                                                                 100% 1146KB 748.8KB/s   00:01    
+PS C:\Users\Admin\Desktop\Alfaisal University\4th Year\SE 446 milestone 2\se446-m2-group-Altamimi-AlDeri> 
+
 
 
 Team Contribution:
