@@ -90,6 +90,7 @@ def main():
         
         if name == "Random Forest":
             rf_model = model.stages[-1]
+            best_pipeline = model  # <--- Add this line
         
         predictions = model.transform(test_df)
         auc = bin_eval.evaluate(predictions)
@@ -123,6 +124,14 @@ def main():
     for name, imp in imp_sorted:
         bar = "#" * int(imp * 40)
         print(f"  {name:<18} {imp:.4f}  {bar}")
+
+
+    print("\nSaving the best model (Random Forest) to HDFS...")
+    best_model = trained_models["Random Forest"]
+    
+    save_path = "hdfs:///user/230151/project/m2/best_model"
+    best_model.write().overwrite().save(save_path)
+    print(f"Model successfully saved to {save_path}")
 
     print("\nPipeline execution completed successfully.")
     spark.stop()
